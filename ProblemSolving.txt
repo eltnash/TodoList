@@ -1,0 +1,56 @@
+ Key Steps for Problem Solving summary
+
+1. Define your problem
+2. Make sure you fully understand the problem
+3. Break the problem down into small and manageable pieces 
+4. Go as deep as you can, until you can get to easy (yes or no) questions
+5. Work your way from the bottom until the problem is solved
+6. Recognise some problems are completely out of your control and that's ok.
+
+
+
+Detailed Overview of Steps 
+
+
+how does one solve a problem ?
+ChatGPT said:
+ChatGPT
+Solving a problem effectively involves a structured approach. Here’s a breakdown of how one can solve problems:
+
+1. Understand the Problem
+Identify the Problem: Be specific about what the issue is. What is broken? What isn’t working as expected? Why is it a problem?
+Gather Information: Learn everything you can about the problem. What are its causes? How does it affect the system or task? What resources are involved?
+Define the Goal: What does the desired outcome look like? What does a "solved" version of the problem entail?
+
+2. Break the Problem into Parts
+Complex problems are easier to tackle when broken down into smaller, manageable chunks. By isolating each part, it’s easier to work on individual aspects and build a path toward the solution.
+
+3. Research Solutions
+Look for existing solutions or best practices in similar scenarios. Is there a known method to solve this type of problem? Do experts suggest specific tools or approaches?
+Try to understand the problem from different angles or perspectives.
+
+4. Brainstorm Possible Solutions
+Generate multiple ideas for solving the problem. Don’t limit yourself—consider creative, out-of-the-box solutions as well as more conventional approaches.
+
+5. Evaluate and Select the Best Solution
+Weigh each potential solution's pros and cons. Consider factors like:
+Feasibility: Can this be done with available resources?
+Time: How long will this take to implement?
+Impact: Will this solve the problem completely or only partially?
+
+6. Plan and Implement the Solution
+Develop a step-by-step plan to implement the solution. Organize your resources and prioritize actions.
+Execute the plan systematically, ensuring each step contributes toward solving the issue.
+
+7. Test and Measure the Solution
+After implementing the solution, test whether it worked. Does the problem still exist? If not, did the solution meet the expected outcome?
+Gather feedback from stakeholders or users if applicable.
+
+8. Refine or Iterate if Necessary
+If the problem isn’t fully resolved, revisit earlier steps. Analyze why it didn’t work, tweak your approach, or even consider alternative solutions.
+
+9. Document the Process and Learn from It
+Write down what worked, what didn’t, and the reasoning behind each decision. This helps in future problem-solving situations by building a reference of lessons learned.
+Summary:
+
+Solving a problem means clearly understanding it, breaking it down, exploring multiple solutions, selecting the best one, implementing it, and learning from the process for continuous improvement. It’s a cycle of observation, action, and adjustment.

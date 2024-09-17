@@ -1,0 +1,65 @@
+ When we break down programming, we can think of it as managing **data**, **behavior**, and **logic**. Here’s a more complete view of the key components:
+
+1. **Data (Variables/State)**: This is the information you want to store and manipulate, like user input, system states, or any kind of values you work with. You store this data in variables, arrays, objects, etc.
+   
+   Example: `let score = 10;`
+
+2. **Behavior (Functions/Methods)**: Functions define how your program acts on data. They encapsulate logic, allowing you to reuse behavior and perform operations on your stored data.
+
+   Example: 
+   ```js
+   function increaseScore(currentScore) {
+      return currentScore + 1;
+   }
+   ```
+
+3. **Control Flow (Logic/Decisions)**: This determines the sequence in which code executes and how decisions are made. You use conditionals (`if/else`), loops (`for`, `while`), and other structures to control the flow of your program.
+
+   Example:
+   ```js
+   if (score > 100) {
+      console.log("High score!");
+   } else {
+      console.log("Keep trying!");
+   }
+   ```
+
+4. **Objects (Structure/Abstraction)**: Objects allow you to group data and behavior together. This is where things like **classes** or **objects** in JavaScript come into play. They represent entities with both data (attributes/properties) and behavior (methods) in one cohesive unit.
+
+   Example:
+   ```js
+   let player = {
+      name: "Alice",
+      score: 50,
+      increaseScore: function() {
+         this.score++;
+      }
+   };
+   ```
+
+5. **Events (Interaction/Triggers)**: Programs often respond to events, like user input (button clicks, typing, etc.). Events trigger behaviors (functions), allowing your program to be interactive and dynamic.
+
+   Example:
+   ```js
+   button.addEventListener("click", increaseScore);
+   ```
+
+So, to sum up:
+- **Data** stores what you manipulate,
+- **Functions** define the behavior and how the data is manipulated,
+- **Control flow** directs how the program runs step-by-step,
+- **Objects** help group related data and behavior,
+- **Events** drive interaction.
+
+These elements form the core of most programming logic. Does this give you a clearer idea?
+
+
+Understanding variables 
+inorder to solve the problem, theres probably some data that we need to retrive/generate and manipulate ?
+how do we retrieve/generate that data we want to manipulate ?
+how do we store that data we want to manipulate ?
+how do we embed the data we want to manipulate within our problem solving tool (code)
+
+Rules in creating variables
+the name must be human readable
+the name should match the cause/purpose

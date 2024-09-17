@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* border: 1px solid white; */
+    height: 100vh;
+    font-size: 1rem;
+    background-image: url(/img/background.jpg);
+    /* background-position: center ; */
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container{
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+
+}
+
+
+.addItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.addItem input{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 5px;
+    padding-left: 5px;
+    width: 100%;
+    font-size: 1rem;
+    height: 37px;
+    border-radius: 10px;
+}
+
+.addItem .addButton{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding-top: 3px;
+    width: 15%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid green;
+}
+
+.addItem .addButton:hover{
+    background-color: green;
+}
+
+.addButton img{
+    border-radius: 50px;
+    background-color: white;
+    width: 27px;
+}
+
+.tasks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.taskItem{
+    border: 1px solid red;
+    margin: 20px;
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+
+}
+
+.taskName{
+    border-radius: 1px solid green;
+}
+
+.taskItem .taskName {
+
+    background-color: white;
+    width: 80%;
+    padding-left: 10px;
+    font-size: 1.5rem;
+}
+
+.buttons{
+    display: flex;
+    width:20% ;
+    text-align: center;
+}
+
+.taskItem .checkbox {
+    border: 1px solid #ECB576;
+    width: 50%;
+    text-align: center;
+    margin: 5px;
+    padding-top: 6px;
+    border-radius: 10px;
+}
+.taskItem .checkbox:hover{
+    background-color: #ECB576;
+}
+
+
+.checkbox img{
+    border-radius: 50px;
+    background-color: white;
+    width: 27px;
+    height: auto;
+}
+
+
+
+.taskItem .bin {
+    border: 1px solid red;
+    width: 50%;
+    text-align: center;
+    margin: 5px;
+    border-radius: 10px;
+    padding-top: 5px;
+}
+
+.taskItem .bin:hover{
+    background-color: red;
+}
+
+.bin img{
+    border-radius: 50px;
+    background-color: white;
+    width: 27px;
+    height: auto;
+}
+
+
+
+
+
+  
+
+
+
+
