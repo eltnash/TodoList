@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
         checkBox.classList.add("checkbox");
 
 
-        const imgCheckMark = document.createElement('img');
-        imgCheckMark.setAttribute('src', 'img/check.png');
-        imgCheckMark.setAttribute('alt', 'checkmark');
+        const imgCheckMark = document.createElement('span');
+        imgCheckMark.classList.add("material-icons");
+        imgCheckMark.textContent = "check";
         checkBox.appendChild(imgCheckMark)
         buttonsContainer.appendChild(checkBox);
         taskItems.appendChild(buttonsContainer);
@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const binElement = document.createElement("div");
         binElement.classList.add("bin");
 
-        const imgBin = document.createElement('img');
-        imgBin.setAttribute('src', 'img/bin.png');
-        imgBin.setAttribute('alt', 'delete');
-        binElement.appendChild(imgBin)
+        const imgBin = document.createElement('span');
+        imgBin.classList.add("material-icons");
+        imgBin.textContent = "delete";
+        binElement.appendChild(imgBin);
         buttonsContainer.appendChild(binElement);
         taskItems.appendChild(buttonsContainer);
 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     //Function to clear user input field
     function clearUserInput(){
-        userInput.value = ' ';
+        userInput.value= "";
     }
 
     // Event listener for adding new task on button click

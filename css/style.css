@@ -52,6 +52,7 @@ body{
 }
 
 .addItem .addButton{
+    transition: 0.2s;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -59,20 +60,17 @@ body{
     margin-right: 10px;
     padding-top: 3px;
     width: 15%;
+    color: green;
     background-color: white;
     border-radius: 10px;
     border: 1px solid green;
 }
 
 .addItem .addButton:hover{
+    color: white;
     background-color: green;
 }
 
-.addButton img{
-    border-radius: 50px;
-    background-color: white;
-    width: 27px;
-}
 
 .tasks{
     display: flex;
@@ -83,6 +81,7 @@ body{
 }
 
 .taskItem{
+    display: flex;
     border: 1px solid red;
     margin: 20px;
     border-radius: 10px;
@@ -96,14 +95,20 @@ body{
 }
 
 .taskName{
+
     border-radius: 1px solid green;
 }
 
-.taskItem .taskName {
+.taskName p{
+    overflow-wrap: break-word;
+}
 
+.taskItem .taskName {
+    border: 1px solid black;
     background-color: white;
     width: 80%;
     padding-left: 10px;
+    margin: 5px;
     font-size: 1.5rem;
 }
 
@@ -114,46 +119,41 @@ body{
 }
 
 .taskItem .checkbox {
+    flex: 4;
     border: 1px solid #ECB576;
-    width: 50%;
     text-align: center;
-    margin: 5px;
+    margin: 5%;
     padding-top: 6px;
     border-radius: 10px;
+    color: #ECB576;
+    transition: 0.2s;
 }
 .taskItem .checkbox:hover{
+    color: white;
     background-color: #ECB576;
 }
 
 
-.checkbox img{
-    border-radius: 50px;
-    background-color: white;
-    width: 27px;
-    height: auto;
-}
-
 
 
 .taskItem .bin {
+    flex: 4;
     border: 1px solid red;
-    width: 50%;
     text-align: center;
-    margin: 5px;
+    margin: 5%;
     border-radius: 10px;
     padding-top: 5px;
+    color: red;
+    transition: 0.5s;
 }
 
 .taskItem .bin:hover{
+    color: white;
     background-color: red;
 }
 
-.bin img{
-    border-radius: 50px;
-    background-color: white;
-    width: 27px;
-    height: auto;
-}
+
+
 
 
 
