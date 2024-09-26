@@ -1,0 +1,20 @@
+### 
+
+Async => Not occuring at the same time
+
+when it is used
+
+1. Fetch data from server
+2. Want to execute something with a delay
+3. Want to execute something after an event 
+
+
+majority of asynchronous javascript is triggered by 
+
+1.Browser APIs /Web APIs
+2. Event based handlers e.g setTimeout, click, mouseover etc
+3. Promises
+
+https://youtu.be/pIjfzjsoVw4
+
+###

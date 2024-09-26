@@ -30,17 +30,24 @@ the second button will have a bin icom where a user can delete that particular t
 Task 3: clear the entered Task from the input display window
 when user has entered their Task information and have clicked add button, the prompt window must be clearered of the task information.
 
-Task 3; add check, functionality to each Task item created
+
+Task 4; add check, functionality to each Task item created.
 
 the user must be able to check a Task item as completed by pressing the check mark button. 
 when the button is clicked the Task written down is crossed with a line, indicating that it has been completed
 this click action and resultant cross line must be specifc to the Task that user wants to mark as completed.
 how do i add this specificty to the task in question ?
-user, action clicks , specific task, task is linked to the behaviour of crossing text information  with a line to indicate  task  is checked (completed) or uncheck task as incomplete if a certaion conditions are true
+user, (action) clicks , specific task, task is linked to the behaviour (function) of crossing text information  with a line to indicate  task  is checked (completed) or uncheck task as incomplete if a certaion conditions are true
+
+outcome we want to see - a line appears on the webpage crossing out the task.
 
 
 
-Task 4, add delete functionality to each Task item created
+Task 5, add delete functionality to each Task item created
+
+user must be able to delete a task item added to the webpage
+user action-clicks on the bin icon of the task they want to delete, the action of clicking is linked to a behaviour (function) which is has the delete functionality.
+the outcome we want - the task is removed form the webpage 
 
 the user must be able to delete a Task item by pressing the delete button.
 

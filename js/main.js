@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //Clear user input after adding task
         clearUserInput(); // i'm calling this function before i have declared it due to hositing.
 
+
        //Add event listener to checkbox for striking through specific task
         checkBox.addEventListener('click', function(){ // this is a function declaration and will be hoisted to the top of the local scope of displayUserInput().
             checkMarkTask(paragraph); //Pass the specifcic task (the paragraph)******
@@ -67,10 +68,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
+
+
+
     //Function to clear user input field
     function clearUserInput(){ // this is a function declaration and will be hoisted to the top of the global scope of 'DOMContentLoaded', function() {}
         userInput.value= "";
     }
+
+
+
+
 
     // Event listener for adding new task on button click
     clickToAdd.addEventListener('click', function () {  // this is a function declaration and will be hoisted to the top of the global scope of 'DOMContentLoaded', function() {}
@@ -83,6 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    //so in our code, when we do the click action of click to add, the displayUserInput() if the first function added to the  call stack, the second function added the call stack is  clear userInput() which executes and is popped ofthe stack folloed by displayUserInput() then the stack is emply again as all codes have finished executing
+
+
+
+
     // Function to strike through a specific task
     function checkMarkTask(task) { // this is a function declaration and will be hoisted to the top of the global scope of 'DOMContentLoaded', function() {}
         if (task.style.textDecoration === "line-through") {
@@ -91,6 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
             task.style.textDecoration = "line-through"; // Check
         }
     }
+
+
+
 
        // Function to delete a specific task item
        function deleteTask(taskItem) { // this is a function declaration and will be hoisted to the top of the global scope of 'DOMContentLoaded', function() {}

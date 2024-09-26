@@ -1,0 +1,171 @@
+
+### The Call Stack:
+The **call stack** is a data structure that keeps track of the execution of functions. Think of it as a stack of plates—you add (push) plates when a function is called, and remove (pop) plates when the function finishes executing.
+
+### How It Works:
+- **When a function is called**, it gets added (pushed) onto the top of the call stack.
+- **When the function completes**, it's removed (popped) from the stack.
+- If a function calls another function, the new function gets pushed onto the stack, and so on.
+
+### Functions are Only Added When Called:
+A function will **not** enter the call stack simply by being **declared**. It’s only when the function is **called (invoked)** that it is added to the call stack.
+
+### Example:
+
+```javascript
+function first() {
+    console.log("First function");
+    second();
+}
+
+function second() {
+    console.log("Second function");
+    third();
+}
+
+function third() {
+    console.log("Third function");
+}
+
+first();  // Starts the function calls
+```
+
+#### Call Stack Process:
+1. **`first()`** is called:
+   - `first()` is pushed to the call stack.
+   - Inside `first()`, it calls `second()`.
+
+2. **`second()`** is called:
+   - `second()` is pushed onto the call stack (above `first()`).
+   - Inside `second()`, it calls `third()`.
+
+3. **`third()`** is called:
+   - `third()` is pushed onto the call stack (above `second()`).
+   - `third()` finishes, so it is removed (popped) from the call stack.
+
+4. After **`third()`** completes, **`second()`** finishes:
+   - `second()` is removed from the call stack.
+
+5. After **`second()`** finishes, **`first()`** completes:
+   - `first()` is removed from the call stack.
+
+### The Call Stack at Each Step:
+1. `first()` is pushed
+2. `second()` is pushed
+3. `third()` is pushed
+4. `third()` is popped
+5. `second()` is popped
+6. `first()` is popped
+
+### Important Points:
+- **Only called functions enter the call stack**.
+- As functions are called, they get added (pushed) to the stack, and as they complete, they are removed (popped) off the stack.
+
+### Function Hoisting vs. Call Stack:
+- **Hoisting** is about how JavaScript moves function declarations to the top of their scope so that you can call them anywhere within that scope.
+- **The call stack** is about the **execution** of those function calls, which only happens when the function is actually invoked.
+
+Does that make sense? Feel free to ask if you need further clarification!
+
+######################################################################################################################################################
+
+Here's a breakdown of how the **call stack** works with your code when the user clicks the "Add" button:
+
+### Click Event Execution and Call Stack:
+
+1. **User clicks the "Add" button**:
+   - This triggers the event listener for the `clickToAdd` button.
+
+2. **Call stack begins**:
+   - **`displayUserInput()`** is called, so it’s the **first function added** (pushed) onto the call stack.
+  
+3. Inside **`displayUserInput()`**:
+   - Several things happen: you create elements, append them, and add event listeners for the checkbox and delete button.
+   - Near the end of the `displayUserInput()` function, it calls another function: **`clearUserInput()`**.
+
+4. **`clearUserInput()`** is called:
+   - When `clearUserInput()` is called inside `displayUserInput()`, it gets **pushed onto the call stack**.
+   - **`clearUserInput()`** clears the input field and finishes its execution, so it's **popped off the stack**.
+   
+5. **`displayUserInput()` finishes**:
+   - Once `clearUserInput()` finishes, the execution inside `displayUserInput()` continues and completes.
+   - **`displayUserInput()` is then popped off the call stack**.
+
+### After this process:
+- The **call stack is empty again** because both `displayUserInput()` and `clearUserInput()` have been executed and removed from the stack.
+  
+### Call Stack Breakdown:
+1. User clicks the button → **`displayUserInput()`** is pushed to the call stack.
+2. **`clearUserInput()`** is called inside `displayUserInput()` → **`clearUserInput()`** is pushed to the call stack.
+3. **`clearUserInput()`** finishes and is popped off the call stack.
+4. **`displayUserInput()`** finishes and is popped off the call stack.
+5. The stack is now empty.
+
+### Visualization:
+
+1. `displayUserInput()` is pushed → Stack: `[displayUserInput()]`
+2. `clearUserInput()` is pushed → Stack: `[displayUserInput(), clearUserInput()]`
+3. `clearUserInput()` finishes → Stack: `[displayUserInput()]`
+4. `displayUserInput()` finishes → Stack: `[]` (empty)
+
+This is a clear example of how the call stack processes function calls in a **last-in, first-out** (LIFO) manner, meaning the most recent function added is the first one to be executed and removed.
+
+Does that clarify things? Let me know if you want to explore this further!
+
+########################################################################################################################################
+
+Question - so when clearUserInput() finishes and is popped of, is that when the code in displayUserInput() i.e the creation of elements etc begins its execution or is is already executed by the time we get to clearUserInput()
+
+Great question! Let's clear this up.
+
+When you call **`clearUserInput()`** inside **`displayUserInput()`**, all the code before the `clearUserInput()` call **in `displayUserInput()`** has already been executed. So by the time **`clearUserInput()`** is called, the creation of the elements, adding the task to the task list, and setting up event listeners have **already happened**.
+
+Here’s how it works:
+
+### Step-by-Step Execution:
+
+1. **`displayUserInput()` starts execution**:
+   - The code inside `displayUserInput()` starts executing from top to bottom.
+   - Elements are created (like the `div` for the task, the task name, buttons, etc.).
+   - These elements are appended to the DOM.
+   - Event listeners for the checkbox and delete button are added.
+   
+2. **Call to `clearUserInput()` happens**:
+   - Once all of the above code inside `displayUserInput()` is done, **`clearUserInput()`** is called near the end of `displayUserInput()`.
+   
+3. **`clearUserInput()` executes**:
+   - At this point, **`clearUserInput()`** is added to the call stack and executed.
+   - It clears the input field, and when it finishes, **it is popped off the call stack**.
+
+4. **`displayUserInput()` finishes execution**:
+   - After **`clearUserInput()`** finishes, **`displayUserInput()`** resumes and completes, then it is also popped off the stack.
+
+### Important:
+- **The creation of elements, appending them to the DOM, and adding event listeners already happened before `clearUserInput()` is called.**
+- **`clearUserInput()`** is one of the last actions in `displayUserInput()`.
+
+### Visualizing the Flow:
+- **Elements Creation**: Happening **before** `clearUserInput()`.
+- **`clearUserInput()` Call**: This comes **after** the elements are created and appended.
+
+```javascript
+function displayUserInput() {
+    // Code for creating elements, adding to DOM
+    // ...
+
+    // All tasks like element creation and appending have already happened by now.
+
+    // Call clearUserInput() at the end
+    clearUserInput();
+}
+```
+
+### Call Stack Flow:
+1. `displayUserInput()` starts → **elements are created and added to the DOM**.
+2. `clearUserInput()` is called → **input field is cleared**.
+3. `clearUserInput()` finishes and is popped off the stack.
+4. `displayUserInput()` finishes and is popped off the stack.
+
+In summary, **the creation of elements has already executed** by the time we get to `clearUserInput()`, and calling `clearUserInput()` is just the final step before `displayUserInput()` finishes.
+
+Let me know if you want more clarification!

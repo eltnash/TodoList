@@ -1,0 +1,40 @@
+### 
+
+Here’s how it works in your code:
+
+1. Global Scope Functions
+Functions like clearUserInput(), checkMarkTask(), and deleteTask() are in the global scope of your DOMContentLoaded event listener. This means these functions are hoisted to the top of that scope. You can call them anywhere inside the DOMContentLoaded callback after they are defined, even before their actual code appears in the file.
+
+javascript
+Copy code
+clearUserInput();
+checkMarkTask(task);
+deleteTask(taskItem);
+These will all work within the global scope because their declarations are hoisted, so JavaScript knows about them during the initial parsing phase.
+
+2. Functions Inside displayUserInput()
+In the case of displayUserInput(), any logic or function definitions you write inside it will be hoisted only within the local scope of displayUserInput(). This means they will only be available once the displayUserInput() function starts executing, and they can't be accessed from outside that function.
+
+For example, inside displayUserInput(), you are adding event listeners for the checkboxes and delete buttons:
+
+javascript
+Copy code
+checkBox.addEventListener('click', function() {
+    checkMarkTask(paragraph);
+});
+
+binElement.addEventListener('click', function() {
+    deleteTask(taskItems);
+});
+Even though these functions (checkMarkTask and deleteTask) are declared in the global scope, they are accessible inside displayUserInput() because they have been hoisted and defined within the broader scope that contains displayUserInput().
+
+Hoisting and Scope Breakdown:
+Global Scope (inside DOMContentLoaded): Functions like clearUserInput(), checkMarkTask(), and deleteTask() are hoisted to the top of this block, so they can be used anywhere inside this DOMContentLoaded function.
+Local Scope (displayUserInput()): Any variables or functions declared inside displayUserInput() (if there were any) would only be hoisted to the top of that specific function, not accessible outside of it.
+To summarize:
+
+Yes, all your global functions are hoisted to the top of the DOMContentLoaded scope.
+Yes, if you had any local functions within displayUserInput(), they would be hoisted to the top of that function’s scope and wouldn’t be accessible outside it.
+Let me know if you'd like any clarifications on this!
+
+###

@@ -1,0 +1,13 @@
+in JavaScript, **synchronous operations** take priority over **asynchronous operations** because JavaScript is single-threaded and follows an event-driven model. This means it executes one operation at a time in the order they appear, which is the **synchronous code**.
+
+Here's how it works:
+
+1. **Synchronous operations** run immediately and block the execution of any other code until they are completed. JavaScript processes these operations first because they are part of the main execution thread, known as the **call stack**.
+   
+2. **Asynchronous operations** (like `setTimeout`, Promises, AJAX requests, etc.) don't block the code. They get offloaded and, when their task is completed (like when a timeout finishes or data is received from a server), they are placed in a **callback queue** (or **task queue**).
+
+3. Once the synchronous code finishes and the call stack is empty, the **event loop** checks the callback queue to see if there are any asynchronous operations that need to be executed. Only then does the event loop push the asynchronous task (e.g., the callback function from `setTimeout`) back onto the call stack to be executed.
+
+So yes, synchronous operations take precedence, and asynchronous operations will only be executed once the call stack is clear.
+
+Would you like an example to illustrate this?

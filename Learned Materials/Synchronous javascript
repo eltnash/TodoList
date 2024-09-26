@@ -1,0 +1,127 @@
+
+### Synchronous JavaScript
+
+In JavaScript, synchronous means that **each piece of code is executed one after the other**, in the order it appears. Each function call waits for the previous one to finish before moving to the next. The call stack processes everything **sequentially**.
+
+In your code, the flow is synchronous:
+
+1. **`displayUserInput()`** starts.
+   - JavaScript runs all the code within this function, **line by line**, in the order it appears.
+
+2. When **`clearUserInput()`** is called:
+   - JavaScript waits for `clearUserInput()` to finish before continuing.
+
+3. Once **`clearUserInput()`** finishes:
+   - JavaScript goes back to where it left off in **`displayUserInput()`**, finishes any remaining code, and then moves on.
+
+### Why is this synchronous?
+- There's **no jumping around** or waiting for something else to complete first. JavaScript processes one task at a time, and **each task blocks the next** until it’s finished.
+
+In your example:
+- The elements are created **first**.
+- Only after that does `clearUserInput()` run.
+- Once all tasks inside `displayUserInput()` are done, it completes.
+
+### Example of Synchronous Behavior:
+
+```javascript
+function displayUserInput() {
+    console.log("Creating elements..."); // Executed first
+    clearUserInput(); // Executed second
+    console.log("Elements created!"); // Executed third
+}
+
+function clearUserInput() {
+    console.log("Clearing user input..."); // Executed when called
+}
+
+displayUserInput();
+```
+
+The output will be:
+
+```
+Creating elements...
+Clearing user input...
+Elements created!
+```
+
+Each line waits for the previous one to finish, which is the hallmark of **synchronous** execution.
+
+### Key Points About Synchronous JavaScript:
+- **One thing happens at a time** (in order).
+- No function moves forward until the current one is finished.
+- The call stack processes tasks **sequentially**.
+
+In contrast, **asynchronous JavaScript** uses things like callbacks, promises, or async/await to handle tasks that may take time (e.g., waiting for data from an API) without blocking the entire execution flow.
+
+Let me know if that makes sense or if you'd like more details!
+
+
+######################################################################################################################################################################################################################################################################################################
+
+https://youtu.be/pIjfzjsoVw4
+
+Note: synchronous part of javascript - everything that happens inside function execution stack  is sequencial, javascripts objective being, make sure to take care of everything inside the function execution stack before it starts looking elsewere in the code for further execution of code.
+
+Yes, you’ve got it exactly right! Let me break it down to reinforce that understanding.
+
+### Synchronous JavaScript Behavior (in the execution stack)
+
+1. **Sequential Execution**:
+   - **Everything inside the function execution stack happens in sequence**, meaning each line of code runs one after the other.
+   - JavaScript handles each task in order, and it will **not move on** to any other code until the current task (or function) in the stack is fully executed.
+
+2. **Call Stack Focus**:
+   - The **call stack** is JavaScript's way of tracking which functions are being executed.
+   - When a function is called, it gets **pushed onto the call stack**. JavaScript will focus on completing this function (and any functions it calls internally) before moving on.
+   - Once the function finishes, it gets **popped off the stack**.
+
+3. **Blocking Behavior**:
+   - While a function is in the call stack, JavaScript is completely focused on that function.
+   - JavaScript will **not look elsewhere** (like the next line of code outside the current function) until the current function and its tasks are done.
+
+### JavaScript’s Objective (Synchronous Flow)
+JavaScript's objective in synchronous execution is:
+
+- **Finish the current task first**: JavaScript must take care of everything inside the current function (or execution stack) before it looks at any other code elsewhere.
+- **No skipping**: It will not move forward until the current function has fully completed its task.
+
+### Example of Synchronous Behavior
+
+```javascript
+function a() {
+  console.log('Function a starts');
+  b(); // This must complete before moving forward
+  console.log('Function a ends');
+}
+
+function b() {
+  console.log('Function b starts and ends');
+}
+
+a();
+console.log('All done');
+```
+
+**Output**:
+```
+Function a starts
+Function b starts and ends
+Function a ends
+All done
+```
+
+Here:
+1. **`a()` is called**: It gets pushed onto the call stack.
+2. **`a()` runs sequentially**: It first logs `Function a starts`, then it calls **`b()`**.
+3. **`b()` is called**: This gets added to the call stack, and JavaScript now focuses entirely on **`b()`** until it finishes.
+4. **Once `b()` finishes**: It pops off the call stack, and JavaScript continues executing **`a()`**, logging `Function a ends`.
+5. **Finally**, after `a()` finishes, the call stack is empty, and the final console log (`All done`) is executed.
+
+### Summary:
+- **Yes**, synchronous JavaScript means **all code inside the function execution stack runs in sequence**.
+- JavaScript will **not move to other parts of the code** until it’s done with the current function’s execution in the call stack.
+
+Would you like to explore how this differs from asynchronous code or dive deeper into the call stack?
+
